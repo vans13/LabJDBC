@@ -21,6 +21,7 @@ public class LaboratorioDB {
         Statement estadito;
         ResultSet putSet;  
         try {
+            //Inicializa el driver
             Class.forName("com.mysql.cj.jdbc.Driver");
             
         } catch (ClassNotFoundException ex) {
@@ -30,6 +31,7 @@ public class LaboratorioDB {
             //Se genera la conexión con la base de datos
             conectado=DriverManager.getConnection("jdbc:mysql://localhost:3306/laboratorio", "root", "");
             estadito=conectado.createStatement();
+            //Inserta y envía datos a la tabla
             estadito.executeUpdate("INSERT INTO datos VALUES (null,'William Wallace','1270-08-23') ");
             
             //Lee los datos de la 
